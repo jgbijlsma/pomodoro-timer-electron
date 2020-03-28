@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+body {
+  background: #1a1a1a;
+  color: #dbdbdb;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn {
+  padding: 0.5rem;
+  min-width: 100px;
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  border-radius: 10px;
+  background: #e4e4e4;
+}
+.btn.start {
+  background: #527c23;
+}
+.btn.stop {
+  background: #853126;
+}
+.btn.pause {
+  background: #af7b1a;
+}
+.btn.break {
+  background: #106283;
+}
+
+.flex-timer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#time-current {
+  margin: 1rem;
+  font-size: 1.5em;
+}
+#time-timer {
+  margin: 1rem;
+  font-size: 3em;
+}
