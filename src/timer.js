@@ -1,3 +1,6 @@
+const electron = require("electron");
+const browserWindow = electron.remote.getCurrentWindow();
+
 const timeCurrentElement = document.getElementById("time-current");
 const timeTimerElement = document.getElementById("time-timer");
 const btnStart = document.getElementById("btn-start");
@@ -23,6 +26,7 @@ const setTimeTimer = () => {
   timeRemaining = new Date(targetTime - timeCurrent);
   timeRemaining.setHours(0);
   timeTimerElement.innerText = timeRemaining.toLocaleTimeString("UK");
+  browserWindow.setTitle(timeRemaining.toLocaleTimeString("UK"));
 
   // theck if the timer is at 0
   if (timeRemaining.getMinutes() === 0 && timeRemaining.getSeconds() === 0) {
@@ -48,6 +52,7 @@ const startTimer = duration => {
 // stop the timer and reset back to 0
 const stopTimer = () => {
   timeTimerElement.innerText = "00:00:00";
+  browserWindow.setTitle("Pomodoro timer");
   clearInterval(timeTimerInterval);
   timeTimerInterval = undefined;
   btnStart.classList.remove("hidden");
